@@ -15,9 +15,9 @@ This is a very confused technician, she does not know what to say here💦
 - Maya
 - Unity
 ## 🥰Hobby
-- [ ] Eat hot pot
-- [ ] Have barbecue
-- [ ] Drink milk tea
-- [ ] lie in
+- [x] Eat hot pot
+- [x] Have barbecue
+- [x] Drink milk tea
+- [x] lie in
 ## 💌Contact information
-> plegant@163.com
+> **Email :**  plegant@163.com
