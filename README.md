@@ -1,5 +1,7 @@
 # Shen Aoyi
 2023-zju设计工程学-个人项目仓库-SAY
+## 🍬Representative Photo
+![Yeye](https://github.com/yizizizi/Shen-Aoyi-DE/blob/main/images/%E8%80%B6%E8%80%B6.jpg?raw=true)
 ## 😎Summary
 This is a very confused technician, she does not know what to say here💦
 ## 🧐Education
