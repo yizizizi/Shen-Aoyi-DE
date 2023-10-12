@@ -11,7 +11,7 @@
   windows下载路径： [Git官网](https://git-scm.com/download/win)
 
 ### 验证是否搭建成功
-  在命令行中依次输入
+  在命令行中依次输入以下指令，如果成功会有相应的版本号
 
 ```
   git version
@@ -21,7 +21,7 @@
   npm -v
 ```
 
-如果成功会有相应的版本号
+
 
 ## 2. Hexo安装
 1. 选择安装路径文件夹，右击选择```Git Bash here```，
@@ -73,15 +73,13 @@
 3. 创建github专属page，```用户名.github.io```
 
 ### SSH绑定
-1. 在git bash输入以下指令
+1. 在git bash输入以下指令，这里的yourname输入自己的GitHub用户名，youremail输入自己的GitHub邮箱。
 
 ```
    git config --global user.name "yourname"
    
    git config --global user.email "youremail"
 ```
-
-   这里的yourname输入自己的GitHub用户名，youremail输入自己的GitHub邮箱。
    
 3. 创建SSH，回车继续即可，之后可通过输入```cat id_rsa.pub```查看公钥
    
@@ -90,6 +88,7 @@
 ```
 
 4. 在github的setting中，设置SSH keys，将信息复制进去
+   
 5. 在gitbash中输入以下指令，查看SSH是否绑定成功
 
 ```
