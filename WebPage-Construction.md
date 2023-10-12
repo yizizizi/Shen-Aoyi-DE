@@ -12,12 +12,14 @@
 
 ### 验证是否搭建成功
   在命令行中依次输入
+
+```
+  git version
   
-  ```git version```
+  node -v
   
-  ```node -v```
-  
-  ```npm -v```
+  npm -v
+```
 
 如果成功会有相应的版本号
 
@@ -31,11 +33,13 @@
 ## 3. Hexo初始化
 1. 继续在命令行中依次输入
 
-    ```hexo init my-blog```
+```
+  hexo init my-blog
 
-    ```cd my-blog```
+  cd my-blog
 
-    ```npm install```
+  npm install
+```
 
 2. 运行结束后，可以看到文件夹中出现如下内容：
 
@@ -47,16 +51,18 @@
     - _config.yml: 博客的配置文件
 
 3. 然后再命令行中输入以下指令，进行本地启动
+ 
+```
+  $ hexo clean
 
-    ```$ hexo clean```
-  
-    ```$ hexo g```
-  
-    ```$ hexo s```
+  $ hexo g
 
-4. 至此，任务创建完成，在浏览器中输入```localhost:4000```即可看到自己的博客界面
+  $ hexo s
+```
 
-5. 在命令行中```ctrl + c```即可关掉服务
+5. 至此，任务创建完成，在浏览器中输入```localhost:4000```即可看到自己的博客界面
+
+6. 在命令行中```ctrl + c```即可关掉服务
 
 ## 4. github仓库准备
 ### 创建仓库
@@ -69,19 +75,48 @@
 ### SSH绑定
 1. 在git bash输入以下指令
 
-    ```git config --global user.name "yourname"```
+```
+   git config --global user.name "yourname"
    
-    ```git config --global user.email "youremail"```
+   git config --global user.email "youremail"
+```
 
    这里的yourname输入自己的GitHub用户名，youremail输入自己的GitHub邮箱。
    
-2. 创建SSH，回车继续即可
+3. 创建SSH，回车继续即可，之后可通过输入```cat id_rsa.pub```查看公钥
    
-    ```ssh-keygen -t rsa -C "youremail"```
-   
-   输入```cat id_rsa.pub```查看公钥
+```
+   ssh-keygen -t rsa -C "youremail"
+```
 
-3. 在github的setting中，设置SSH keys，将信息复制进去
-4. 在gitbash中输入以下指令，查看SSH是否绑定成功
+4. 在github的setting中，设置SSH keys，将信息复制进去
+5. 在gitbash中输入以下指令，查看SSH是否绑定成功
 
-    ```ssh -T git@github.com```
+```
+   ssh -T git@github.com
+```
+
+
+## 5. 部署hexo到github
+ 1. 打开文件夹中的站点配置文件```_config.yml```，翻到最后，修改以下部分：
+```
+  deploy:
+    type: git
+    repo: git@github.com:zjc2782171149/用户名.github.io.git
+    branch: master
+```
+
+2. 安装```deploy-git```
+```
+  npm install hexo-deployer-git --save
+```
+3. 进行部署
+```
+  hexo clean
+
+  hexo g
+
+  hexo d
+```
+4. 部署成功，在```http://你的用户名.github.io```查看自己的博客
+
