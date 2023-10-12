@@ -1,59 +1,87 @@
 # 网站搭建文档
 ## 1. 环境准备
 ### Node环境搭建
-Hexo是基于nodeJS编写的，所以需要安装一下nodeJs和里面的npm工具。
-
-windows下载路径： [Node官网](https://nodejs.org/en/download)
+  Hexo是基于nodeJS编写的，所以需要安装一下nodeJs和里面的npm工具。
+  
+  windows下载路径： [Node官网](https://nodejs.org/en/download)
 
 ### Git环境搭建
-一个分布式版本控制系统，用于项目的版本控制管理，使用Git Bash命令行工具来操作git。
-
-windows下载路径： [Git官网](https://git-scm.com/download/win)
+  一个分布式版本控制系统，用于项目的版本控制管理，使用Git Bash命令行工具来操作git。
+  
+  windows下载路径： [Git官网](https://git-scm.com/download/win)
 
 ### 验证是否搭建成功
-在命令行中依次输入
-
-```git version```
-
-```node -v```
-
-```npm -v```
+  在命令行中依次输入
+  
+  ```git version```
+  
+  ```node -v```
+  
+  ```npm -v```
 
 如果成功会有相应的版本号
 
 ## 2. Hexo安装
-选择安装路径文件夹，右击选择```Git Bash here```，
-在命令行输入
+1. 选择安装路径文件夹，右击选择```Git Bash here```，
+2. 在命令行输入
 ```npm install -g hexo-cli```
 
-运行结束后输入```hexo -v```查看版本
+3. 运行结束后输入```hexo -v```查看版本
 
 ## 3. Hexo初始化
-继续在命令行中依次输入
+1. 继续在命令行中依次输入
 
-```hexo init my-blog```
+    ```hexo init my-blog```
 
-```cd my-blog```
+    ```cd my-blog```
 
-```npm install```
+    ```npm install```
 
-运行结束后，可以看到文件夹中出现如下内容：
+2. 运行结束后，可以看到文件夹中出现如下内容：
 
-- node_modules: 依赖包
-- public：存放生成的页面
-- scaffolds：生成文章的一些模板
-- source：用来存放你的文章
-- themes：主题
-- _config.yml: 博客的配置文件
+    - node_modules: 依赖包
+    - public：存放生成的页面
+    - scaffolds：生成文章的一些模板
+    - source：用来存放你的文章
+    - themes：主题
+    - _config.yml: 博客的配置文件
 
-然后再命令行中输入以下指令，进行本地启动
+3. 然后再命令行中输入以下指令，进行本地启动
 
-```$ hexo clean```
+    ```$ hexo clean```
+  
+    ```$ hexo g```
+  
+    ```$ hexo s```
 
-```$ hexo g```
+4. 至此，任务创建完成，在浏览器中输入```localhost:4000```即可看到自己的博客界面
 
-```$ hexo s```
+5. 在命令行中```ctrl + c```即可关掉服务
 
-至此，任务创建完成，在浏览器中输入```localhost:4000```即可看到自己的博客界面
+## 4. github仓库准备
+### 创建仓库
+1. 注册github账户
 
-在命令行中```ctrl + c```即可关掉服务
+2. 点击```New repository```新建仓库
+
+3. 创建github专属page，```用户名.github.io```
+
+### SSH绑定
+1. 在git bash输入以下指令
+
+    ```git config --global user.name "yourname"```
+   
+    ```git config --global user.email "youremail"```
+
+   这里的yourname输入自己的GitHub用户名，youremail输入自己的GitHub邮箱。
+   
+2. 创建SSH，回车继续即可
+   
+    ```ssh-keygen -t rsa -C "youremail"```
+   
+   输入```cat id_rsa.pub```查看公钥
+
+3. 在github的setting中，设置SSH keys，将信息复制进去
+4. 在gitbash中输入以下指令，查看SSH是否绑定成功
+
+    ```ssh -T git@github.com```
